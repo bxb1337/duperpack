@@ -6,6 +6,8 @@ on:
         description: Download URL for the target universal APK
         required: true
         type: string
+permissions:
+  contents: read
 jobs:
   initialize-environment:
     runs-on: ubuntu-latest
