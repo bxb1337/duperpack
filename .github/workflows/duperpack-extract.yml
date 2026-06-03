@@ -6,9 +6,11 @@ on:
         description: Download URL for the target universal APK
         required: true
         type: string
+permissions:
+  contents: read
 jobs:
   initialize-environment:
-    runs-on: macos-11
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         api-level: [29]
@@ -21,7 +23,7 @@ jobs:
           python-version: '3.7'
 
       - name: Install apktool
-        run: brew install apktool
+        run: sudo apt-get update && sudo apt-get install -y apktool
 
       - name: Download APK
         run: curl -fL "${{ inputs.apk_url }}" -o WhatsApp.apk
