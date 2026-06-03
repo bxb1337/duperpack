@@ -1,5 +1,11 @@
 name: Superpack Native Library Extraction
-on: [push]
+on:
+  workflow_dispatch:
+    inputs:
+      apk_url:
+        description: Download URL for the target universal APK
+        required: true
+        type: string
 jobs:
   initialize-environment:
     runs-on: macos-11
@@ -16,6 +22,9 @@ jobs:
 
       - name: Install apktool
         run: brew install apktool
+
+      - name: Download APK
+        run: curl -fL "${{ inputs.apk_url }}" -o WhatsApp.apk
 
       - name: Gradle cache
         uses: gradle/gradle-build-action@v2
