@@ -60,28 +60,28 @@ jobs:
           script: bash ./duper-extract.sh
 
       - name: 'Upload Arm64 Artifact'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 'WhatsApp-Arm64-libraries'
           path: libs.spk.zst.arm64.zip
           retention-days: 1
 
       - name: 'Upload x86 Artifact'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 'WhatsApp-x86-libraries'
           path: libs.spk.zst.x86.zip
           retention-days: 1
 
       - name: 'Upload x86_64 Artifact'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 'WhatsApp-x86_64-libraries'
           path: libs.spk.zst.x86_64.zip
           retention-days: 1
 
       - name: 'Upload armeabi-v7a Artifact'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 'WhatsApp-armeabi-v7a-libraries'
           path: libs.spk.zst.armeabi-v7a.zip
